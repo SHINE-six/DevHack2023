@@ -1,4 +1,4 @@
-import AllInOneSearch from "./AllInOneSearch/AllInOneSearch";
+import AllInOneSearch from "./AllInOneSearch/AllInOneSearch.jsx";
 import ChatAi from "./ChatAi/ChatAi";
 import MainBlogs from "./MainBlogs/MainBlogs";
 import medicalInfo from "./medicalInfo/medicalInfo";
