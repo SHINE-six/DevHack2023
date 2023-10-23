@@ -10,9 +10,6 @@ def AIChat():
         if (input == "bye"):
             break
 
-def Article():
-    inn = input("Enter your topic: ")
-    GenerateArticle(inn)
+def Article(inn):
+    return GenerateArticle(inn)
 
-
-Article()

@@ -1,10 +1,7 @@
-#cQg6GiiFNDCdbwIUQ5yk4VY3su8eb6yS91tO2Neblvkm_mHLPwoHzy8CpdNrQUb5Ee_qVQ. (bard ai)
-#AIzaSyD3L3VAx_njujrDy2yWX-4yfDRmDaOZjVQ (PaLM)
-
 import google.generativeai as palm
 
 
-palm.configure(api_key='AIzaSyD3L3VAx_njujrDy2yWX-4yfDRmDaOZjVQ')
+palm.configure(api_key='')
 
 
 def InitiateChat():
@@ -20,25 +17,26 @@ def Chat(input):
 
 def GenerateArticle(input):
     abc = input
-    determine =f"Does {abc} relate to health?"
+    determine =f"Does {abc} relate to public health?"
     determine_res = palm.generate_text(
             prompt=determine,  
-            temperature=0,
-            max_output_tokens=200,
+            temperature=0.1,
+            max_output_tokens=2,
+            candidate_count=1
             )
 
-    print(determine_res.result) 
 
     if (determine_res.result=="no"):
-        print("Please enter a health related article")
+        return "Please enter a health related article"
     else:
         prompt =f"give me a health related article/blog about {abc}"
 
         response = palm.generate_text(
             prompt=prompt,  
-            temperature=0.5,
-            max_output_tokens=200,
+            temperature=0.6,
+            max_output_tokens=400,
+            candidate_count=1
             )
 
-        print(response.result) 
+        return (response.result)
 

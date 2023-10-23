@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from markupsafe import escape
+from interface import (AIChat, Article)
 
 # from tryy import Chat
 
@@ -17,9 +19,10 @@ def api():
     print(data)
     return 'Welcome welcome'
 
-@app.route('/api', methods=['GET'])
-def tt():
-    return 'FINALLY get'
+@app.route('/api/<title>', methods=['GET'])
+def api_title(title):
+    return Article(title)
+
 
 
 
