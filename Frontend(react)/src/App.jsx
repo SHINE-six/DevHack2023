@@ -7,14 +7,16 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className='h-screen bg-green-400 flex flex-col flex-1'>
+      <div className='h-screen bg-green-400 flex flex-col'>
         
-        <Routes>
-          <Route path='/' element={<Page.MainBlogs />}/>
-          <Route path='/Search' element={<Page.AllInOneSearch />}/>
-          <Route path='/Chat' element={<Page.ChatAi />}/>
-        </Routes>
-        <div className= 'w-screen h-20 bottom-0'>
+        <div className='h-full bg-slate-200 overflow-hidden'>
+            <Routes>
+              <Route path='/' element={<Page.MainBlogs />}/>
+              <Route path='/Search' element={<Page.AllInOneSearch />}/>
+              <Route path='/Chat' element={<Page.ChatAi />}/>
+            </Routes>
+        </div>
+        <div className= 'w-screen h-20 bottom-0 bg-green-500'>
           <NavBar/>
         </div>
         

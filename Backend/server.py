@@ -1,14 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from markupsafe import escape
-from interface import (AIChat, Article)
+from PaLM_api.interface import (AIChat, Article)
+from MongoDB.Connect_config import collection
+from PaLM_api.interface import (AIChat, Article)
 
-# from tryy import Chat
+
+
 
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/api')
+@app.route('/api', methods=['GET'])
 def home():
     x = {"name": "John", "age": 30, "city": "New York"}
     return jsonify(x)
@@ -22,6 +24,21 @@ def api():
 @app.route('/api/<title>', methods=['GET'])
 def api_title(title):
     return Article(title)
+
+@app.route('/api/giaooo', methods=['POST'])
+def post_news():
+    data = request.get_json()
+    response = collection.insert_one(data)
+    print(response)
+    return 'News uploaded: \n' + str(response)
+
+@app.route('/apigetnews', methods=['GET'])
+def get_news():
+    response = collection.find()
+    news = []
+    for item in response:
+        news.append(item)
+    return news[1]['articles']
 
 
 
