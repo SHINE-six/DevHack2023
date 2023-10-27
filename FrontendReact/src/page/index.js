@@ -3,5 +3,6 @@ import ChatAi from "./ChatAi/ChatAi.jsx";
 import MainBlogs from "./MainBlogs/MainBlogs.jsx";
 import medicalInfo from "./medicalInfo/medicalInfo.jsx";
 import SpecialTopicArticle from "./SpecialTopicArticle/SpecialTopicArticle.jsx";
+import LoginScreen from "./LoginScreen/LoginScreen.jsx";
 
-export default {AllInOneSearch, ChatAi, MainBlogs, medicalInfo, SpecialTopicArticle};
+export default {AllInOneSearch, ChatAi, MainBlogs, medicalInfo, SpecialTopicArticle, LoginScreen};

@@ -29,6 +29,7 @@ const MainBlogs = () => {
                 )
                 )}
             </div>
+            <div>HELLO THERE!</div>
             <div className='h-full overflow-auto flex flex-col items-center gap-8'>
                 {news && news.map(neww => (
                     <NewsVertiCard key={neww.id} news={neww} />
