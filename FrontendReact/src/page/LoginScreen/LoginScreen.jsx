@@ -1,12 +1,11 @@
 import React from 'react';
-import Logo from '/Users/nicholas/Downloads/DevHack2023/FrontendReact/src/components/Images/Logo.png';
-import StatusBar from '../../components/StatusBar';
-import Slogan from '/Users/nicholas/Downloads/DevHack2023/FrontendReact/src/components/Images/Slogan.png';
+import Logo from '../../components/Images/Logo.png';
+import Slogan from '../../components/Images/Slogan.png';
 import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
     const navigateToMain = useNavigate();
-
+ 
     return (
         <div>
             <div style={styles.container}>

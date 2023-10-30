@@ -4,15 +4,27 @@ import google.generativeai as palm
 palm.configure(api_key='AIzaSyD3L3VAx_njujrDy2yWX-4yfDRmDaOZjVQ')
 
 
+
 def InitiateChat():
     # Create a new conversation
     global convee
     convee = palm.chat(messages='Hello')
     print(convee.last)
 
-def Chat(input):
-    response = convee.reply(input)
-    print(response.last)
+def Chat():
+    inn = input("Enter your message: ")
+    red = convee.reply(inn)
+    print(red.last)
+    if (inn == "bye"):
+        print(red.messages)
+        return 0
+
+
+while True:
+    InitiateChat()
+    if (Chat() == 0):
+        break
+
 
 
 def GenerateArticle(input):
@@ -40,3 +52,4 @@ def GenerateArticle(input):
 
         return (response.result)
 
+GenerateArticle("covid")

@@ -9,5 +9,5 @@ try:
     db = client['test']
     collection = db['News']
 except Exception as e:
-    print(e)
+    print("Error message " + e)
 

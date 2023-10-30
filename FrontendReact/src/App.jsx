@@ -7,21 +7,26 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='h-screen flex flex-col'>
-        <Routes>
-          <Route path='/' element={<Page.LoginScreen />} />
-          <Route path='/Main' element={<Page.MainBlogs/>} />
-          <Route path='/Search' element={<Page.AllInOneSearch />} />
-          <Route path='/Chat' element={<Page.ChatAi />} />
-          <Route path="/Medical" element={<Page.medicalInfo/>}/>
-          <Route path="/Profile" element={<Page.ProfileScreen/>}/>
-          <Route path="/Edit" element={<Page.EditProfile/>}/>
-        </Routes>
+
+        <div className='h-full bg-slate-200 overflow-hidden'>
+			<Routes>
+				<Route path='/' element={<Page.LoginScreen />} />
+				<Route path='/Main' element={<Page.MainBlogs/>} />
+				<Route path='/Search' element={<Page.AllInOneSearch />} />
+				<Route path='/Chat' element={<Page.ChatAi />} />
+				<Route path="/Medical" element={<Page.medicalInfo/>}/>
+				<Route path="/Profile" element={<Page.ProfileScreen/>}/>
+				<Route path="/Edit" element={<Page.EditProfile/>}/>
+			</Routes>
+        </div>
+		
         <div className='w-screen h-20 bottom-0'>
           <NavBar/>
         </div>
+
       </div>
     </BrowserRouter>
-  );
-};
+  )
+}
 
 export default App;
