@@ -20,10 +20,10 @@ const LoginScreen = () => {
                 <div style={{ paddingTop: "25px" }}>
                     <img style={styles.sloganStyle} src={Slogan} />
                 </div>
-                <div style={{paddingBottom: '210px'}}>
+                <div style={{paddingBottom: '200px'}}>
                     <p style={styles.textStyle}>Your 24-hour on-call virtual doctor</p>
                 </div>
-                <div style={{ marginLeft: "10px", width: "320px", paddingBottom: "17px"}}>
+                <div style={{ marginLeft: "10px", width: "320px", paddingBottom: "5px"}}>
                     <p style={styles.termsStyle}>By tapping Login As Guest, you agree to our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy.</p>
                     <button onClick={() => navigateToMain('/Main')} style={styles.loginButton}>Login As Guest</button>
                 </div>

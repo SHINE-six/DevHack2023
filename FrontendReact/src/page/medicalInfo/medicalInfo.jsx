@@ -3,7 +3,7 @@ import React from 'react';
 const medicalInfo = () => {
 
     return (
-        <div> JSX code here</div>
+        <div><p>I am the Medical Record Screen!</p></div>
     )
 
 }

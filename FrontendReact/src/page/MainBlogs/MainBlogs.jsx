@@ -22,15 +22,14 @@ const MainBlogs = () => {
     
     console.log(news);
     return (
-        <div className='h-full overflow-auto flex flex-col'>
-            <div className='h-3/5 overflow-auto flex flex-row items-center justify-items-center gap-4 my-4 snap-x snap-mandatory'>
+        <div className='h-full overflow-auto flex flex-col border-2 border-red-500'>
+            <div className='h-3/5 overflow-auto flex flex-row items-center justify-items-center gap-4 my-4 snap-x snap-mandatory border-2 border-red-500'>
                 {news && news.map(neww => (
                     <NewsHoriCard key={neww.id} news={neww} />
                 )
                 )}
             </div>
-            <div>HELLO THERE!</div>
-            <div className='h-full overflow-auto flex flex-col items-center gap-8'>
+            <div className='h-full overflow-auto flex flex-col items-center gap-8 border-2 border-red-500'>
                 {news && news.map(neww => (
                     <NewsVertiCard key={neww.id} news={neww} />
                 )
