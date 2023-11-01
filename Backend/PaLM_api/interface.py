@@ -2,7 +2,7 @@ from AIAI import (InitiateChat, GenerateArticle)
 
 
 def AIChat():
-    InitiateChat()
+    return InitiateChat()
 
 
 

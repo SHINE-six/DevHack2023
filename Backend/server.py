@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from PaLM_api.interface import (AIChat, Article)
+# from PaLM_api.interface import (AIChat, Article)
 from MongoDB.Connect_config import collection
-from PaLM_api.interface import (AIChat, Article)
+from PaLM_api.AIAI import (InitiateChat, GenerateArticle, CHATCHAT)
 
 
 
@@ -23,7 +23,7 @@ def api():
 
 @app.route('/api/<title>', methods=['GET'])
 def api_title(title):
-    return Article(title)
+    return GenerateArticle(title)
 
 @app.route('/api/giaooo', methods=['POST'])
 def post_news():
@@ -39,6 +39,16 @@ def get_news():
     for item in response:
         news.append(item)
     return news[1]['articles']
+
+@app.route('/apiIniChat', methods=['GET'])
+def inichat():
+    return InitiateChat()
+
+@app.route('/apichat', methods=['POST'])
+def chat():
+    data = request.get_json()
+    response = CHATCHAT(data['prompt'])
+    return response
 
 
 

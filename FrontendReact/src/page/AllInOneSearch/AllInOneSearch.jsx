@@ -12,7 +12,7 @@ const AllInOneSearch = () => {
     const searchStyle = toggleSearch? 'w-60 h-10 px-2 rounded-md' : 'w-40 h-6 px-1 rounded-sm';
 
     const applyHeader = (text) => {
-        return text.replace('**', '<div style="font-size: 20px">', 1).replace('**', '</div>', 1)
+        return text.replace('<h1>', '<div style={{ fontSize: \'20px\' , background-color: lightblue}}\'">', 1).replace('</h1>', '</div>', 1)
     }
 
     const fetchApi = async (e) => {
@@ -33,14 +33,19 @@ const AllInOneSearch = () => {
 
     
     return (
-        <div className='bg-red-400 h-full flex flex-col'>
-            <div className={`${searchTabHeight} justify-center items-center flex transition-all`}>
-                <form onSubmit={fetchApi} className='flex flex-row gap-4'>
-                    <input type="text" placeholder='Title, Product, ...' className={searchStyle} onClick={() => setToggleSearch(true)} onChange={(e) => setTitle(e.target.value)}/>
-                    <button onClick={fetchApi}><CiSearch className='text-3xl'/></button>
+        <div className='h-full flex flex-col border-2 border-red-500'>
+            <div className='flex justify-center py-3 bg-white'>
+                <p className='text-lg font-jakarta'>HEALTH BOT AI</p>
+            </div>
+
+            <div className={`${searchTabHeight} bg-darkGray justify-center items-center flex transition-all`}>
+                <form onSubmit={fetchApi} className='flex flex-row gap-4 bg-darkGray'>
+                    <input type="text" placeholder='Search (e.g Title, Product)' className={searchStyle} onClick={() => setToggleSearch(true)} onChange={(e) => setTitle(e.target.value)}/>
+                    <button onClick={fetchApi}><CiSearch className='text-3xl text-navbarActive'/></button>
                 </form>
             </div>
-            <div className='bg-purple-400 h-full overflow-auto' dangerouslySetInnerHTML={{__html: article}}></div>
+            <div className='bg-[#FFFFFF] h-full overflow-auto' dangerouslySetInnerHTML={{__html: article}}></div>
+            <h1>giao</h1>
         </div>
     )
 

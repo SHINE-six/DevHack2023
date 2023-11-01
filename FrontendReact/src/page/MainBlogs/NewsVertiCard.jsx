@@ -10,7 +10,7 @@ const NewsVertiCard = ({ news }) => {
     }
 
     return (
-        <div className='flex flex-row w-11/12 shadow-xl rounded-lg'>
+        <div className='flex flex-row w-11/12 shadow-littlebit border-[0.5px] border-darkGray rounded-lg'>
             <img src={news.urlToImage} alt="pictuer?" onClick={openNews} className='object-cover w-32 aspect-square rounded-lg'/>
             <div className='flex flex-col h-full'>
                 <div className='font-bold mt-4 mb-2 mx-2 active:font-black' onClick={openNews}>{news.title}</div>

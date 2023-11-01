@@ -22,14 +22,20 @@ const MainBlogs = () => {
     
     console.log(news);
     return (
-        <div className='h-full overflow-auto flex flex-col border-2 border-red-500'>
-            <div className='h-3/5 overflow-auto flex flex-row items-center justify-items-center gap-4 my-4 snap-x snap-mandatory border-2 border-red-500'>
+        <div className='h-full overflow-auto flex flex-col'>
+
+             {/**Div for Profile */}
+             <div className={`flex justify-center py-3 theme1 bg-white`}>
+                <p className='font-jakarta text-lg'>MAIN BLOG</p>
+            </div>
+
+            <div className='bg-[#33363F] h-3/5 overflow-auto flex flex-row items-center justify-items-center gap-4 mb-4  snap-x snap-mandatory'>
                 {news && news.map(neww => (
                     <NewsHoriCard key={neww.id} news={neww} />
                 )
                 )}
             </div>
-            <div className='h-full overflow-auto flex flex-col items-center gap-8 border-2 border-red-500'>
+            <div className='h-full overflow-auto flex flex-col items-center gap-8 '>
                 {news && news.map(neww => (
                     <NewsVertiCard key={neww.id} news={neww} />
                 )
@@ -41,3 +47,10 @@ const MainBlogs = () => {
 }
 
 export default MainBlogs;
+
+const styles= {
+    fontStyle : {
+        fontFamily: 'Plus Jakarta Sans',
+        fontSize: '18px'
+    }
+}
