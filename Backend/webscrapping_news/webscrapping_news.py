@@ -1,7 +1,8 @@
 from newsapi import NewsApiClient
+from decouple import config
 
-api = NewsApiClient(api_key='d35e40197c2943babf0e8d3330bc337e')
+api = NewsApiClient(api_key=config('NEWS_API_KEY'))
 
-x = api.get_top_headlines(category='health')
+x = api.get_everything(q='food')
 
 print(x)

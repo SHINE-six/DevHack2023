@@ -1,6 +1,7 @@
 from pymongo import MongoClient
+from decouple import config
 
-uri = 'mongodb+srv://shine:Wisdom_100@cluster0.mxiiu7b.mongodb.net/?retryWrites=true&w=majority'
+uri = config('MONGO_URI')
 
 client = MongoClient(uri)
 try:

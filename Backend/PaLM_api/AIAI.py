@@ -1,7 +1,8 @@
 import google.generativeai as palm
+from decouple import config
 
-
-palm.configure(api_key='AIzaSyD3L3VAx_njujrDy2yWX-4yfDRmDaOZjVQ')
+# Set the API key
+palm.configure(api_key=config('PaLM_API_KEY'))
 
 
 # Create a new conversation
@@ -47,3 +48,4 @@ def GenerateArticle(input):
             candidate_count=1
             )
         return (response.result)
+    

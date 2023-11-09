@@ -1,9 +1,6 @@
 import React from 'react';
 
 const NewsHoriCard = ({ news }) => {
-    const giventime = new Date(news.publishedAt);
-    const currentTime = new Date();
-    const timeDifference_hour = ((currentTime - giventime)/ 1000 / 60 / 60).toFixed(0);
 
     const openNews = () => {
         window.open(news.url, '_blank');

@@ -4,6 +4,7 @@ import NewsVertiCard from './NewsVertiCard';
 
 const MainBlogs = () => {
     const [news, setNews] = useState([]);
+    const [news2, setNews2] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -12,6 +13,21 @@ const MainBlogs = () => {
                 const data = await response.json();
                 console.log(data);
                 setNews(data);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        fetchNews();
+    }, [])
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                const response = await fetch('https://w8nqnwlz-5000.asse.devtunnels.ms/apigetFoodnews');
+                const data = await response.json();
+                console.log(data);
+                setNews2(data);
             }
             catch (err) {
                 console.log(err);
@@ -30,7 +46,7 @@ const MainBlogs = () => {
             </div>
 
             <div className='bg-[#33363F] h-3/5 overflow-auto flex flex-row items-center justify-items-center gap-4 mb-4  snap-x snap-mandatory'>
-                {news && news.map(neww => (
+                {news2 && news2.map(neww => (
                     <NewsHoriCard key={neww.id} news={neww} />
                 )
                 )}
