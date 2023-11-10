@@ -1,3 +1,4 @@
+import json
 import google.generativeai as palm
 from decouple import config
 
@@ -39,13 +40,26 @@ def GenerateArticle(input):
     if (determine_res.result=="no"):
         return "Please enter a health related article"
     else:
-        prompt =f"give me a health related article/blog about {abc} in json format"
+        prompt = f"give me a health related article/blog about {abc} in json format with 400 words, consisting of title, tags, content: (type(header/paragraph/list/list-item/image), text(in one line))"
 
-        response = palm.generate_text(
-            prompt=prompt,  
-            temperature=0.6,
-            max_output_tokens=400,
-            candidate_count=1
-            )
-        return (response.result)
-    
+        while True:
+            try: 
+                response = palm.generate_text(
+                    prompt=prompt,  
+                    temperature=0.6,
+                    max_output_tokens=700,
+                    candidate_count=1
+                    )
+                response = response.result
+                if response[0] == '`':
+                    response = '\n'.join(response.splitlines()[1:-1])
+                    
+                response = json.loads(response)
+                return (response)
+            except:
+                continue
+
+
+
+
+

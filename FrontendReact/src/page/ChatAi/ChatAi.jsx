@@ -48,12 +48,12 @@ const ChatAi = () => {
         setChatHist([...chatHist, {'author': '0', 'content': 'Injury'}]);
     }
 
-    const fakeResponse = [{'author': '0', 'content': 'help me schedule a emergency room, I got stung by a bee'}
-                                        , {'author': '1', 'content': 'is it swelling red? do you feel dizzy?'}
-                                        , {'author': '0', 'content': 'yes, it is swelling red? but i am not dizzy, and i got stung on my back'}
-                                        , {'author': '1', 'content': 'ok, i will help you schedule an emergency room, please wait a moment, and do you need any ambulance to your location?'}
-                                        , {'author': '0', 'content': 'no, my wife can drive me there, thank you'}
-                                        , {'author': '1', 'content': 'based on ur symptom, the suitable and available hospital is Hospital Serdang, located 3 km from ur location, your request is also in queue in Hospital Serdand Emergency Room, with estimated wait time of 15 mins. Waze:  https://www.waze.com/ms/live-map/directions/my/selangor/serdang/hospital-serdang,-jalan-hospital-serdang?to=place.ChIJbWUvOm3KzTER0JCKhCAM8w4'}
+    const fakeResponse = [{'author': '0', 'content': 'help me schedule an emergency room appointment, I got stung by a bee'}
+                                        , {'author': '1', 'content': 'Is there red swelling? Do you feel dizzy? Where is the location of the sting?'}
+                                        , {'author': '0', 'content': 'Yes, it is swelling red? but i am not dizzy, and i got stung on my back'}
+                                        , {'author': '1', 'content': 'I will help you schedule an emergency room appointment, please wait a moment. Do you need an ambulance sent to your location?'}
+                                        , {'author': '0', 'content': 'No, I don\'t need an ambulance, thank you'}
+                                        , {'author': '1', 'content': 'Based on your symptoms, a suitable and available hospital is Hospital Serdang, located 3 km from your location. Your appointment has been placed in queue in Hospital Serdang Emergency Room, with an estimated wait time of 15 mins. Waze: https://www.waze.com/ms/live-map/directions/my/selangor/serdang/hospital-serdang,-jalan-hospital-serdang?to=place.ChIJbWUvOm3KzTER0JCKhCAM8w4'}
                                     ];
     const handleMovieTime = (e) => {
         e.preventDefault();
@@ -84,7 +84,7 @@ const ChatAi = () => {
                     <button type="submit" onClick={handleSubmit}><RiSendPlane2Fill className='text-3xl text-navbarActive' /></button>
                 </form>
             </div>
-            <div className='w-20 h-20 bg-red-400 absolute right-0 bottom-36' onClick={handleMovieTime}></div>
+            <div className='w-20 h-20  absolute right-0 bottom-36' onClick={handleMovieTime}></div>
         </div>
     )
 

@@ -16,11 +16,8 @@ const LoginScreen = () => {
                         alt="Logo"
                     />
                 </div>
-                <div style={{ paddingTop: "25px" }}>
-                    <img style={styles.sloganStyle} src={Slogan} />
-                </div>
-                <div style={{paddingBottom: '200px'}}>
-                    <p style={styles.textStyle}>Your 24-hour on-call virtual doctor</p>
+                <div className='pt-4 flex justify-center'>
+                    <div className='text-4xl text-cyan-600 font-bold tracking-wider pb-4'>DiagnoKnow</div>
                 </div>
                 <div style={{ marginLeft: "10px", width: "320px", paddingBottom: "5px"}}>
                     <p style={styles.termsStyle}>By tapping Login As Guest, you agree to our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy.</p>
@@ -62,7 +59,7 @@ const styles = {
         
     },
     loginButton: {
-        marginTop: '15px',
+        marginTop: '125px',
         height: '54px',
         backgroundColor: '#000000',
         color: 'white',
